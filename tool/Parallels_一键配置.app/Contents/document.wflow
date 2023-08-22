@@ -63,15 +63,15 @@
 PDFM_DISP_DST="${PDFM_DIR}/Contents/MacOS/Parallels Service.app/Contents/MacOS/prl_disp_service"
 PDFM_DISP_PATCH="${PDFM_DISP_DST}_patched"
 PDFM_DISP_BCUP="${PDFM_DISP_DST}_backup"
+INPPUT="密码"
 
 if [ "$(pgrep -x prl_disp_service)" != "" ] &amp;&amp; [ "$(pgrep -x prl_client_app)" != "" ]; then
     open "${PDFM_DIR}"
     exit 0
 fi
 
-INPPUT="密码"
 echo "${INPPUT}" | sudo -S cp -f "${PDFM_DISP_PATCH}" "${PDFM_DISP_DST}" || exit 1
-open "${PDFM_DIR}"
+echo "${INPPUT}" | sudo -S open "${PDFM_DIR}"
 
 sleep 2
 
