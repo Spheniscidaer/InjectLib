@@ -190,12 +190,10 @@ echo "${INPPUT}" | sudo -S cp -f "${PDFM_DISP_BCUP}" "${PDFM_DISP_DST}" || exit 
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<integer>1</integer>
 				<key>location</key>
-				<string>452.000000:469.000000</string>
+				<string>452.000000:252.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
