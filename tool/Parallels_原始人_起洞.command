@@ -22,8 +22,8 @@ if [[ -e "./Parallels_一键配置.app" ]]; then
     if [[ $flag != n ]]; then
         read -r -p "⚙️ 请输入密码(明文)然后回车." input || exit 1
         sed -i '' -e "s/INPPUT=\"密码\"/INPPUT=\"${input}\"/g;" "./Parallels_一键配置.app/Contents/document.wflow" || exit 1
-        sudo rm -rf "/Applications/启动_PD.app" > /dev/null 2>&1
-        cp -rf "./Parallels_一键配置.app" "/Applications/启动_PD.app" || exit 1
+        echo "${input}" | sudo -S rm -rf "/Applications/启动_PD.app" > /dev/null 2>&1
+        echo "${input}" | sudo -S cp -rf "./Parallels_一键配置.app" "/Applications/启动_PD.app" || exit 1
         sed -i '' -e "s/INPPUT=\"${input}\"/INPPUT=\"密码\"/g;" "./Parallels_一键配置.app/Contents/document.wflow" || exit 1
         open "/Applications/启动_PD.app" || exit 1
         exit 0
